@@ -17,7 +17,7 @@ html {
 }
 
 body {
-    background-color: #000000 ;
+    background-color: #E0F8D8 ;
     color: var(--text-white);
     font-family: var(--font-main);
     line-height: 1.6;
@@ -81,10 +81,11 @@ body {
     letter-spacing: 3px;
     margin-bottom: 1.5rem;
     text-transform: uppercase;
+    color: #0c140c;
 }
 
 .hero-subtext {
-    color: var(--text-dim);
+    color: #0c140c;
     font-size: 1.1rem;
     font-weight: 300;
     max-width: 650px;
@@ -95,7 +96,7 @@ body {
     display: inline-block;
     padding: 0.9rem 2.2rem;
     border: 1px solid var(--text-white);
-    color: var(--text-white);
+    color: #0c140c;
     text-decoration: none;
     font-size: 0.85rem;
     letter-spacing: 2px;
@@ -117,7 +118,7 @@ body {
 }
 
 .social-links a {
-    color: var(--text-dim);
+    color: #0c140c;
     text-decoration: none;
     font-size: 0.85rem;
     letter-spacing: 1px;
@@ -129,7 +130,7 @@ body {
 }
 
 .dot {
-    color: var(--text-dim);
+    color: #0c140c;
     font-size: 0.8rem;
 }
 
@@ -139,6 +140,15 @@ body {
 }
 
 .section-title {
+    font-size: 1.5rem;
+    font-weight: 300;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 2.5rem;
+    text-align: center;
+    color: #0c140c;
+}
+.section-title2 {
     font-size: 1.5rem;
     font-weight: 300;
     letter-spacing: 2px;
@@ -165,8 +175,8 @@ body {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    filter: brightness(0.45) grayscale(15%);
-    transition: filter 0.5s ease, transform 0.5s ease;
+    filter: none; /* 🟢 Aucun filtre noir ou sombre par défaut */
+    transition: transform 0.4s ease; /* Animation fluide de l'agrandissement */
 }
 
 .photo-overlay {
@@ -194,8 +204,7 @@ body {
 }
 
 .photo-card:hover img {
-    filter: brightness(1) grayscale(0%);
-    transform: scale(1.02);
+    transform: scale(1.08); /* 🟢 L'image s'agrandit légèrement (8%) au survol */
 }
 
 /* --- MODAL CONTACT (POPUP) --- */
