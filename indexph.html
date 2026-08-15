@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clément Langevin — Photographie</title>
+    <!-- Assurez-vous que le nom du fichier CSS correspond exactement au vôtre -->
+    <link rel="stylesheet" href="styleph.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Barre de Navigation -->
+    <header class="navbar">
+        <a href="#" class="nav-brand">Clément Langevin</a>
+        <nav class="nav-links">
+            <a href="#home" class="active">Accueil</a>
+            <a href="#work">Galerie</a>
+            <!-- Dans le <header> / <nav> -->
+            <a href="javascript:void(0)" onclick="openAboutModal()">À propos</a>
+            <a href="javascript:void(0)" onclick="openContactModal()">Contact</a>
+        </nav>
+    </header>
+
+    <!-- Section Accueil (Hero) -->
+    <section class="hero-section" id="home">
+        <div class="hero-content">
+            <h1 class="hero-title">Clément Langevin</h1>
+            <p class="hero-subtext">
+                Photographe passionné de faune sauvage, je partage à travers mes clichés la beauté et la discrétion du monde animal.
+            </p>
+            <div class="hero-actions">
+                <a href="#work" class="btn-primary">Découvrir mes photos</a>
+            </div>
+            
+            <div class="social-links">
+                <a href="https://www.instagram.com/clgv_photo/" target="_blank" rel="noopener">Instagram</a>
+                <span class="dot">•</span>
+                <a href="https://www.tiktok.com/@clgv_photo" target="_blank" rel="noopener">TikTok</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Galerie Photo (3 par ligne) -->
+    <section class="portfolio-section" id="work">
+        <h2 class="section-title">Galerie</h2>
+        
+        <div class="photo-grid">
+            <div class="photo-card" onclick="openLightbox(this)">
+                <img src="Photo site/rouge.jpg" alt="rouge">
+                <div class="photo-overlay">
+                    <span class="photo-category">Rougequeue noir</span>
+                    <h3 class="photo-title">2026</h3>
+                </div>
+            </div>
+
+            <div class="photo-card" onclick="openLightbox(this)">
+                <img src="Photo site/Heron.jpg" alt="Heron">
+                <div class="photo-overlay">
+                    <span class="photo-category">Héron cendré</span>
+                    <h3 class="photo-title">2026</h3>
+                </div>
+            </div>
+
+            <div class="photo-card" onclick="openLightbox(this)">
+                <img src="Photo site/cygne.jpg" alt="cygne">
+                <div class="photo-overlay">
+                    <span class="photo-category">Cygnes</span>
+                    <h3 class="photo-title">2026</h3>
+                </div>
+            </div>
+
+            <div class="photo-card" onclick="openLightbox(this)">
+                <img src="Photo site/Cygne2.jpg" alt="Cygne">
+                <div class="photo-overlay">
+                    <span class="photo-category">Cygnes</span>
+                    <h3 class="photo-title">2026</h3>
+                </div>
+            </div>
+
+            <div class="photo-card" onclick="openLightbox(this)">
+                <img src="Photo site/Grebe.jpg" alt="Grèbe Huppé">
+                <div class="photo-overlay">
+                    <span class="photo-category">Grèbe huppé</span>
+                    <h3 class="photo-title">2026</h3>
+                </div>
+            </div>
+
+            <div class="photo-card" onclick="openLightbox(this)">
+                <img src="Photo site/Mouette.jpg" alt="Mouette">
+                <div class="photo-overlay">
+                    <span class="photo-category">Mouette rieuse</span>
+                    <h3 class="photo-title">2026</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal Formulaire de Contact -->
+    <div class="modal-overlay" id="contactModal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeContactModal()">&times;</span>
+            <h2 class="section-title">Contact</h2>
+            <p class="contact-intro">Envoyez-moi un message si vous avez la moindre question. </p>
+
+            <form id="contactForm" action="https://formspree.io/f/mwlenlba" method="POST" class="contact-form">
+                <div class="form-group">
+                    <label for="name">Votre Nom / Pseudo</label>
+                    <input type="text" id="name" name="name" required placeholder="Votre nom">
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Votre Email</label>
+                    <input type="email" id="email" name="_replyto" required placeholder="nom@exemple.com">
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="4" required placeholder="Votre message..."></textarea>
+                </div>
+
+                <button type="submit" id="btnSubmit" class="btn-submit">Envoyer le message</button>
+                <div id="formStatus" class="form-status"></div>
+            </form>
+        </div>
+    </div>
+    <!-- Modal Popup À Propos -->
+<div class="modal-overlay" id="aboutModal">
+    <div class="modal-content">
+        <span class="close-btn" onclick="closeAboutModal()">&times;</span>
+        <h2 class="section-title">À propos</h2>
+        <div class="about-text">
+            <p>Je m'appelle Clément Langevin, je fais de la photo animalière depuis 1 ans, vous pouvez retrouver ici quelques-unes de mes photos préférées. <br/>
+                J'espère qu'à travers ces clichés, vous pourrez ressentir les mêmes expériences que je vis devant chacun de ces animaux.
+        </div>
+    </div>
+</div>
+
+    <!-- Modal Visionneuse Photo (Lightbox) -->
+    <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+        <span class="close-btn">&times;</span>
+        <img id="lightbox-img" src="" alt="Photo agrandie">
+        <div class="lightbox-caption" id="lightbox-caption"></div>
+    </div>
+
+    <!-- Pied de page -->
+    <footer class="footer">
+        <p>&copy; 2026 Clément Langevin — Tous droits réservés.</p>
+    </footer>
+
+    <!-- Assurez-vous que le nom du fichier JS correspond exactement au vôtre -->
+    <script src="scriptph.js"></script>
+</body>
+</html>
